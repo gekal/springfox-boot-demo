@@ -18,6 +18,7 @@ public class OpenApiSpecConfig {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.OAS_30)
+                .useDefaultResponseMessages(false)
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("cn.gekal.sample.springfoxdemo"))
