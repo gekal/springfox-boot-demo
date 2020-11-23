@@ -1,0 +1,10 @@
+### Get Sample
+GET http://localhost:8080/
+
+### Post sample
+POST http://localhost:8080/
+Content-Type: application/json
+
+{
+  "value": "hello."
+}
