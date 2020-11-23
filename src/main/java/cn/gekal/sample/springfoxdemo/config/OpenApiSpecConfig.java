@@ -1,5 +1,7 @@
 package cn.gekal.sample.springfoxdemo.config;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -19,10 +21,8 @@ public class OpenApiSpecConfig {
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("cn.gekal.sample.springfoxdemo"))
-                // Controllerのアノテーションセレクト
-                // .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
-                // Operationのアノテーションセレクト
-                // .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
                 .build();
     }
